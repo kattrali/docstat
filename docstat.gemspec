@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
   gem.extra_rdoc_files = ['README.md','CHANGELOG.md']
   gem.version       = '1.0.0'
   gem.add_development_dependency('bacon')
+  gem.add_development_dependency('rake')
   gem.add_dependency('sqlite3')
   gem.files = %W{
     Gemfile
