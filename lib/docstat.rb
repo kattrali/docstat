@@ -15,6 +15,7 @@ class DocStat
     else
       overall_ratio = 1
     end
+    print "#{tokens.size} tokens, #{((overall_ratio*1000).to_i/1000.0) * 100}% documented"
     { "containers" => containers.map(&:to_hash) , "ratio" => overall_ratio }
   end
 

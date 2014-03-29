@@ -19,6 +19,8 @@ Gem::Specification.new do |gem|
     README.md
     bin/docstat
     lib/docstat.rb
+    lib/docstat/container.rb
+    lib/docstat/token.rb
   }
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(spec|features)/})

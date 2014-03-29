@@ -1,27 +1,36 @@
 
 class Token
-  attr_reader :name, :type, :abstract, :declaration
+  attr_reader :name, :type, :abstract, :declaration, :return_value
 
-  METHOD_TYPES   = ['clm','clfm','instm','instfm']
-  PROPERTY_TYPES = ['instp','instfp']
+  METHOD_TYPES   = ['clm','clfm','instm','intfm']
+  PROPERTY_TYPES = ['instp','intfp']
+  TYPE_MAPPING = {
+    'clm' => 'class method',
+    'clfm' => 'class category method',
+    'instm' => 'instance method',
+    'intfm' => 'instance method',
+    'instp' => 'instance property',
+    'intfp' => 'instance property'
+  }
 
   def initialize property_ary
-    container_name, @name, @type, @abstract, @declaration = *property_ary
+    _, @name, @type, @abstract, @declaration, @return_value = *property_ary
   end
 
   def to_hash
     {
       "name" => name,
-      "type" => type,
+      "type" => pretty_type,
       "abstract" => abstract,
       "declaration" => declaration,
+      "returns" => return_value,
       "documented" => documented?
     }
   end
 
   def documented?
-    # TODO: check return type documentation and parameter docs as well?
-    !(abstract.nil? || abstract.empty?)
+    # TODO: check parameter docs as well?
+    !((abstract.nil? || abstract.empty?) && (return_value.nil? || return_value.empty?))
   end
 
   def method?
@@ -30,6 +39,10 @@ class Token
 
   def property?
     PROPERTY_TYPES.include?(type)
+  end
+
+  def pretty_type
+    TYPE_MAPPING[type]
   end
 
   def description
