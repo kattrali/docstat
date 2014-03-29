@@ -1,2 +1,10 @@
 #!/usr/bin/env ruby
 
+require File.expand_path(File.join(File.dirname(__FILE__), '../lib/docstat'))
+
+if docset_path = ARGV[0]
+  DocStat.process(docset_path)
+else
+  print "No Documentation Set (*.docset) directory specified\n"
+  exit(1)
+end
