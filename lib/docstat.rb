@@ -4,7 +4,7 @@ require 'sqlite3'
 require 'docstat/container'
 require 'docstat/token'
 
-class DocStat
+module DocStat
 
   def self.process docset_path
     db_path    = File.join(docset_path, 'Contents/Resources/docSet.dsidx')

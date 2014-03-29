@@ -21,7 +21,7 @@ end
 
 describe 'Container' do
   before do
-    @container = Container.new('SomeClass', [
+    @container = DocStat::Container.new('SomeClass', [
       ['SomeClass','walk:','instfm','saves the state','-(void)walk:(NSError**)error'],
       ['SomeClass','counter','instp','','@property (nonatomic, strong) NSNumber *counter'],
       ['OtherClass','fly:','instfm',nil,'-(void)fly:(NSError**)error'],
@@ -57,7 +57,7 @@ describe 'Token' do
 
   describe 'to_hash' do
     before do
-      @token = Token.new(['SomeClass','save:','instfm','saves the state','-(void)save:(NSError**)error'])
+      @token = DocStat::Token.new(['SomeClass','save:','instfm','saves the state','-(void)save:(NSError**)error'])
       @hash = @token.to_hash
     end
 
@@ -82,7 +82,7 @@ describe 'Token' do
 
     describe "instance category method" do
       before do
-        @token = Token.new(['SomeClass','save:','intfm','saves the state','-(void)save:(NSError**)error'])
+        @token = DocStat::Token.new(['SomeClass','save:','intfm','saves the state','-(void)save:(NSError**)error'])
       end
 
       it "is true" do
@@ -92,7 +92,7 @@ describe 'Token' do
 
     describe "class category method" do
       before do
-        @token = Token.new(['SomeClass','save:','clfm','saves the state','-(void)save:(NSError**)error'])
+        @token = DocStat::Token.new(['SomeClass','save:','clfm','saves the state','-(void)save:(NSError**)error'])
       end
 
       it "is true" do
@@ -102,7 +102,7 @@ describe 'Token' do
 
     describe "instance method" do
       before do
-        @token = Token.new(['SomeClass','save:','instm','saves the state','-(void)save:(NSError**)error'])
+        @token = DocStat::Token.new(['SomeClass','save:','instm','saves the state','-(void)save:(NSError**)error'])
       end
 
       it "is true" do
@@ -112,7 +112,7 @@ describe 'Token' do
 
     describe "class method" do
       before do
-        @token = Token.new(['SomeClass','save:','clm','saves the state','-(void)save:(NSError**)error'])
+        @token = DocStat::Token.new(['SomeClass','save:','clm','saves the state','-(void)save:(NSError**)error'])
       end
 
       it "is true" do
@@ -122,7 +122,7 @@ describe 'Token' do
 
     describe "property" do
       before do
-        @token = Token.new(['SomeClass','saved','instp','state is saved','@property (nonatomic, getter = isSaved) BOOL saved'])
+        @token = DocStat::Token.new(['SomeClass','saved','instp','state is saved','@property (nonatomic, getter = isSaved) BOOL saved'])
       end
 
       it "is false" do
@@ -132,7 +132,7 @@ describe 'Token' do
 
     describe "category property" do
       before do
-        @token = Token.new(['SomeClass','saved','intfp','state is saved','@property (nonatomic, getter = isSaved) BOOL saved',''])
+        @token = DocStat::Token.new(['SomeClass','saved','intfp','state is saved','@property (nonatomic, getter = isSaved) BOOL saved',''])
       end
 
       it "is false" do
@@ -144,7 +144,7 @@ describe 'Token' do
   describe "documented?" do
     describe "abstract length > 0 and return value length = 0" do
       before do
-        @token = Token.new(['SomeClass','save:','instfm','saves the state','-(void)save:(NSError**)error',''])
+        @token = DocStat::Token.new(['SomeClass','save:','instfm','saves the state','-(void)save:(NSError**)error',''])
       end
 
       it "is true" do
@@ -154,7 +154,7 @@ describe 'Token' do
 
     describe "return value length > 0 and abstract length = 0" do
       before do
-        @token = Token.new(['SomeClass','save:','instfm','','-(void)save:(NSError**)error','nothing!'])
+        @token = DocStat::Token.new(['SomeClass','save:','instfm','','-(void)save:(NSError**)error','nothing!'])
       end
 
       it "is true" do
@@ -164,7 +164,7 @@ describe 'Token' do
 
     describe "return value length > 0 and abstract length > 0" do
       before do
-        @token = Token.new(['SomeClass','save:','instfm','saves the state','-(void)save:(NSError**)error','nothing!'])
+        @token = DocStat::Token.new(['SomeClass','save:','instfm','saves the state','-(void)save:(NSError**)error','nothing!'])
       end
 
       it "is true" do
@@ -174,7 +174,7 @@ describe 'Token' do
 
     describe "abstract length = 0 and return value length = 0" do
       before do
-        @token = Token.new(['SomeClass','save:','instfm','','-(void)save:(NSError**)error',''])
+        @token = DocStat::Token.new(['SomeClass','save:','instfm','','-(void)save:(NSError**)error',''])
       end
 
       it "is false" do
