@@ -15,7 +15,6 @@ Gem::Specification.new do |gem|
   gem.files = %W{
     Gemfile
     LICENSE
-    LICENSE.txt
     CHANGELOG.md
     README.md
     bin/docstat
