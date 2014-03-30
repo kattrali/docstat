@@ -1,6 +1,6 @@
 # docstat
 
-Documentation metrics for libraries, optimized for Cocoa
+Documentation metrics for libraries, optimized for Cocoa. `docstat` takes documentation sets (*.docset) generated via `appledoc` and similar tools and extracts general statistics. It also includes a binary for testing that coverage exceeds a given ratio.
 
 ## Usage
 
@@ -20,7 +20,7 @@ If no expected coverage ratio is specified, the default is '0.9'. On failure, th
 
 `DocStat.process(docset_path)` returns a Hash containing information about all of the documented tokens in the following structure:
 
-```json
+```ruby
 {
   'ratio': decimal
   'containers': [
