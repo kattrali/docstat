@@ -1,4 +1,4 @@
-# docstat
+# docstat [![Build Status](https://travis-ci.org/kattrali/docstat.svg?branch=master)](https://travis-ci.org/kattrali/docstat)
 
 Documentation metrics for libraries, optimized for Cocoa. `docstat` takes documentation sets (*.docset) generated via `appledoc` and similar tools and extracts general statistics. It also includes a binary for testing that coverage exceeds a given ratio.
 
