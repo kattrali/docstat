@@ -2,7 +2,9 @@
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../lib/docstat'))
 
-if docset_path = ARGV[0]
+if ARGV.include?('--version') || ARGV.include?('-v')
+  print "#{DocStat::VERSION}\n"
+elsif docset_path = ARGV[0]
   stats  = DocStat.process(docset_path)
   tokens = stats['containers'].map {|c| c['tokens']}.flatten
   ratio  = stats['ratio']

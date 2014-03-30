@@ -2,6 +2,7 @@ $:.unshift File.expand_path('../../lib', __FILE__)
 
 require 'sqlite3'
 require 'docstat/container'
+require 'version'
 
 module DocStat
 
@@ -33,6 +34,8 @@ module DocStat
     { "containers" => containers.map(&:to_hash) , "ratio" => overall_ratio(containers) }
   end
 
+  # Returns true if the coverage ratio of a docset at
+  # docset_path is greater than or equal to passing_ratio
   def self.test_ratio docset_path, passing_ratio
     containers = containers_from_docset(docset_path)
     overall_ratio(containers) >= passing_ratio
