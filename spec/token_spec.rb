@@ -91,6 +91,69 @@ describe 'Token' do
     end
   end
 
+  describe "property?" do
+
+    describe "instance category method" do
+      before do
+        @token = DocStat::Token.new(['SomeClass','save:','intfm','saves the state','-(void)save:(NSError**)error'])
+      end
+
+      it "is false" do
+        @token.property?.should.equal false
+      end
+    end
+
+    describe "class category method" do
+      before do
+        @token = DocStat::Token.new(['SomeClass','save:','clfm','saves the state','-(void)save:(NSError**)error'])
+      end
+
+      it "is false" do
+        @token.property?.should.equal false
+      end
+    end
+
+    describe "instance method" do
+      before do
+        @token = DocStat::Token.new(['SomeClass','save:','instm','saves the state','-(void)save:(NSError**)error'])
+      end
+
+      it "is false" do
+        @token.property?.should.equal false
+      end
+    end
+
+    describe "class method" do
+      before do
+        @token = DocStat::Token.new(['SomeClass','save:','clm','saves the state','-(void)save:(NSError**)error'])
+      end
+
+      it "is false" do
+        @token.property?.should.equal false
+      end
+    end
+
+    describe "property" do
+      before do
+        @token = DocStat::Token.new(['SomeClass','saved','instp','state is saved','@property (nonatomic, getter = isSaved) BOOL saved'])
+      end
+
+      it "is true" do
+        @token.property?.should.equal true
+      end
+    end
+
+    describe "category property" do
+      before do
+        @token = DocStat::Token.new(['SomeClass','saved','intfp','state is saved','@property (nonatomic, getter = isSaved) BOOL saved',''])
+      end
+
+      it "is true" do
+        @token.property?.should.equal true
+      end
+    end
+  end
+
   describe "documented?" do
     describe "abstract length > 0 and return value length = 0" do
       before do
