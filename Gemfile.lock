@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    docstat (1.0.1)
+    docstat (1.0.3)
       sqlite3
 
 GEM
