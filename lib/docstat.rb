@@ -2,7 +2,6 @@ $:.unshift File.expand_path('../../lib', __FILE__)
 
 require 'sqlite3'
 require 'docstat/container'
-require 'docstat/token'
 
 module DocStat
 

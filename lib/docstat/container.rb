@@ -1,3 +1,6 @@
+$:.unshift File.expand_path('..', __FILE__)
+
+require 'token'
 
 module DocStat
   class Container

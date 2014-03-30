@@ -1,5 +1,5 @@
 
 desc "Runs tests"
 task :spec do
-  sh "bacon spec/docstat_spec.rb"
+  sh "bacon spec/*_spec.rb"
 end
