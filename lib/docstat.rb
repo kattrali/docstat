@@ -34,8 +34,7 @@ module DocStat
 
   def self.test_ratio docset_path, passing_ratio
     containers = containers_from_docset(docset_path)
-    ratio = overall_ratio(containers)
-    ratio >= passing_ratio
+    overall_ratio(containers) >= passing_ratio
   end
 
   private
