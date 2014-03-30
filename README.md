@@ -26,6 +26,7 @@ If no expected coverage ratio is specified, the default is '0.9'. On failure, th
   'containers': [
     {
       'name': 'class name',
+      'ratio': decimal,
       'tokens': [
         {
           'name': 'name of token',

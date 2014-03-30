@@ -14,6 +14,7 @@ module DocStat
   #   'containers': [
   #     {
   #       'name': 'class name',
+  #       'ratio': decimal
   #       'tokens': [
   #         {
   #           'name': 'name of token',
