@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.name          = "docstat"
   gem.require_paths = ["lib"]
   gem.extra_rdoc_files = ['README.md','CHANGELOG.md']
-  gem.version       = '1.0.0'
+  gem.version       = '1.0.1'
   gem.add_development_dependency('bacon')
   gem.add_development_dependency('rake')
   gem.add_dependency('sqlite3')
@@ -18,10 +18,10 @@ Gem::Specification.new do |gem|
     CHANGELOG.md
     README.md
     bin/docstat
+    bin/docstat-test
     lib/docstat.rb
     lib/docstat/container.rb
     lib/docstat/token.rb
   }
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(spec|features)/})
 end
