@@ -1,6 +1,7 @@
 $:.unshift File.expand_path('../../lib', __FILE__)
 
 require 'bacon'
+require 'pretty_bacon'
 require 'docstat/token'
 
 describe 'Token' do

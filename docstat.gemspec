@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
   gem.extra_rdoc_files = ['README.md','CHANGELOG.md','LICENSE']
   gem.version       = DocStat::VERSION
   gem.add_development_dependency('bacon')
+  gem.add_development_dependency('prettybacon')
   gem.add_development_dependency('rake')
   gem.add_dependency('sqlite3')
   gem.files = %W{

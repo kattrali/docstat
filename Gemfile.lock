@@ -8,6 +8,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     bacon (1.2.0)
+    prettybacon (0.0.1)
+      bacon (~> 1.2)
     rake (10.1.1)
     sqlite3 (1.3.9)
 
@@ -17,4 +19,5 @@ PLATFORMS
 DEPENDENCIES
   bacon
   docstat!
+  prettybacon
   rake
