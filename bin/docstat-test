@@ -6,7 +6,7 @@ if ARGV.include?('--version') || ARGV.include?('-v')
   print "#{DocStat::VERSION}\n"
 elsif docset_path = ARGV[0] and passing_ratio = (ARGV[1] || '0.9')
   state = DocStat.test_ratio(docset_path, passing_ratio.to_f) ? 'PASSED' : 'FAILED'
-  print "Documentation coverage must be greater than or equal to #{passing_ratio.to_f * 100}%: #{state}"
+  print "Documentation coverage must be greater than or equal to #{passing_ratio.to_f * 100}%: #{state}\n"
   exit(state ? 0 : 1)
 else
   print "No Documentation Set (*.docset) directory specified\n"
