@@ -8,7 +8,7 @@ elsif docset_path = ARGV[0]
   stats  = DocStat.process(docset_path)
   tokens = stats['containers'].map {|c| c['tokens']}.flatten
   ratio  = stats['ratio']
-  print "#{tokens.size} tokens, #{((ratio*1000).to_i/1000.0) * 100}% documented"
+  print "#{tokens.size} tokens, #{((ratio*1000).to_i/1000.0) * 100}% documented\n"
 else
   print "No Documentation Set (*.docset) directory specified\n"
   exit(1)
